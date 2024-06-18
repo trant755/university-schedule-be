@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "streams",
+  "info": {
+    "singularName": "stream",
+    "pluralName": "streams",
+    "displayName": "Stream",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "groups": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::group.group",
+      "mappedBy": "stream"
+    }
+  }
+}

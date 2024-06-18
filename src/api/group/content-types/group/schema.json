@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "groups",
+  "info": {
+    "singularName": "group",
+    "pluralName": "groups",
+    "displayName": "Group",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "stream": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::stream.stream",
+      "inversedBy": "groups"
+    },
+    "students": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::student.student",
+      "mappedBy": "group"
+    },
+    "schedules": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::schedule.schedule",
+      "mappedBy": "group"
+    }
+  }
+}

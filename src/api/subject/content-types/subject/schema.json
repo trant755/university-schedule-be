@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subjects",
+  "info": {
+    "singularName": "subject",
+    "pluralName": "subjects",
+    "displayName": "Subject",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "courseCode": {
+      "type": "string"
+    },
+    "schedules": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::schedule.schedule",
+      "mappedBy": "subject"
+    },
+    "teacher": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::teacher.teacher",
+      "inversedBy": "subjects"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "schedules",
+  "info": {
+    "singularName": "schedule",
+    "pluralName": "schedules",
+    "displayName": "Schedule",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "teacher": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::teacher.teacher",
+      "inversedBy": "schedules"
+    },
+    "subject": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::subject.subject",
+      "inversedBy": "schedules"
+    },
+    "room": {
+      "type": "string",
+      "required": true
+    },
+    "time_slot": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::time-slot.time-slot",
+      "inversedBy": "schedules"
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "group": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::group.group",
+      "inversedBy": "schedules"
+    }
+  }
+}
